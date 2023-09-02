@@ -1,0 +1,76 @@
+name: hexabyte
+description: Application for using food waste as consumable organic resource.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.17.5 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase_core: ^1.13.1
+  firebase_auth: ^3.3.9
+  provider: ^6.0.2
+  shared_preferences: ^2.0.13
+  google_fonts: ^2.3.1
+  flutter_form_builder: ^7.1.1
+  http: ^0.13.4
+  auto_size_text: ^3.0.0
+  form_builder_validators: ^7.6.1
+  pinput: ^3.0.1
+  flutter_typeahead: ^4.0.0
+  flutter_svg: ^1.0.3
+  font_awesome_flutter: ^9.2.0
+  fluttertoast: ^8.0.9
+  bottom_navy_bar: ^6.0.0
+  flutter_secure_storage: ^5.0.2
+  razorpay_flutter: ^1.2.9
+  geolocator: ^9.0.1
+  cupertino_icons: ^1.0.2
+  scroll_app_bar: ^2.0.0
+  recase: ^4.0.0
+  count_stepper: ^0.0.4
+  flutter_onboarding_screen: ^2.0.2
+  flutter_rating_bar: ^4.0.1
+  flutter_easyloading: ^3.0.5
+  lazy_load_scrollview: ^1.3.0
+  flutter_map: ^2.2.0
+  latlong2: ^0.8.1
+  file: ^6.1.4
+  intl: ^0.17.0
+  flutter_profile_picture: ^2.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.9.0
+
+  flutter_lints: ^2.0.0
+
+flutter_icons:
+  android: 'ic_launcher'
+  ios: true
+  image_path: 'assets/logo.png'
+
+# auth, onboarding(if user not there), listing page(home), profile page, sellers page
+# product details page, user orders page.
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
