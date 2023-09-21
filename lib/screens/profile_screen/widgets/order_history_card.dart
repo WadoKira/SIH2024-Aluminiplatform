@@ -110,12 +110,12 @@ class OrderHistoryCard extends StatelessWidget {
                       case 3:
                         return const Icon(
                           Icons.sentiment_satisfied,
-                          color: Colors.lightGreen,
+                          color: Colors.lightBlueAccent,
                         );
                       case 4:
                         return const Icon(
                           Icons.sentiment_very_satisfied,
-                          color: Colors.green,
+                          color: Colors.purple,
                         );
                       default:
                         return Container();

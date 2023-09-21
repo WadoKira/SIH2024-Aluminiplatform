@@ -16,9 +16,9 @@ class _ActiveOrderScreenState extends State<ActiveOrderScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE9EFC0),
+      backgroundColor: const Color(0xFFC5CAE9),
       appBar: AppBar(
-        backgroundColor: const Color(0xFFE9EFC0),
+        backgroundColor: const Color(0xFFC5CAE9),
         elevation: 0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

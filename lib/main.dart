@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:form_builder_validators/localization/l10n.dart';
 import 'package:hexabyte/screens/intermediate_screen/intermediate_screen.dart';
+import 'package:hexabyte/screens/select_role_screen.dart/select_role_screen.dart';
+import 'package:hexabyte/layout/nav_Layout.dart';
 import 'package:hexabyte/theme_provider/app_theme.dart';
-// import 'package:hexabyte/screens/onboarding_screen/onboarding_screen.dart';
+import 'package:hexabyte/screens/onboarding_screen/onboarding_screen.dart';
 import 'package:provider/provider.dart';
-
 import 'theme_provider/theme_provider_app.dart';
 
 Future<void> main() async {
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         // final themeProvider = Provider.of<ThemeProvider>(context);
 
         return MaterialApp(
-          title: 'HexaByte',
+          title: 'Intersect',
           // darkTheme: MyThemes.darkTheme,
           theme: appPrimaryTheme(),
           debugShowCheckedModeBanner: false,
@@ -46,11 +47,12 @@ class MyApp extends StatelessWidget {
           localizationsDelegates: const [
             FormBuilderLocalizations.delegate,
           ],
-          home: IntermediateScreen(),
+          home:SelectRoleScreen(),
+          //home: IntermediateScreen(),
           // If you wanna go to Home page straight away, comment the above line and uncomment
           // the below line.
-          // home: NavigationLayout(),
-          // home: const OnboardingScreen(),
+          //home: NavigationLayout(),
+          //home: const OnboardingScreen(),
           builder: EasyLoading.init(),
         );
       },

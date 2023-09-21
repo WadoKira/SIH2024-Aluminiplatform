@@ -19,10 +19,10 @@ class _QuickBuyScreenState extends State<QuickBuyScreen> {
   @override
   Widget build(BuildContext context) {
     Size? size = MediaQuery.of(context).size;
-    Color? color = const Color(0xFFE9EFC0);
+    Color? color = const Color(0xFFC5CAE9);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFE9EFC0),
+        backgroundColor: const Color(0xFFC5CAE9),
         elevation: 0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

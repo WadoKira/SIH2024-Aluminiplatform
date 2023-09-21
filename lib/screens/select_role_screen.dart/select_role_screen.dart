@@ -46,7 +46,7 @@ class SelectRoleScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(6.0),
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          primary: const Color(0xFFB4E197),
+                          backgroundColor: const Color(0xFF7986CB),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12))),
                       onPressed: () => {
@@ -70,7 +70,7 @@ class SelectRoleScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(6.0),
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          primary: const Color(0xFFB4E197),
+                          backgroundColor: const Color(0xFF7986CB),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12))),
                       onPressed: () => {

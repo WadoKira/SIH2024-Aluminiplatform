@@ -73,7 +73,7 @@ class ListedProductCard extends StatelessWidget {
                             Text(
                               'Rs. $cost/-',
                               style: GoogleFonts.montserrat(
-                                  color: Colors.green.shade600, fontWeight: FontWeight.bold, fontSize: 16),
+                                  color: Colors.purple.shade400, fontWeight: FontWeight.bold, fontSize: 16),
                             ),
                             const SizedBox(
                               height: 8,

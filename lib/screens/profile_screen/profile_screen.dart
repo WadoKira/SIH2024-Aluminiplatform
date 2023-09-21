@@ -18,11 +18,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    Color? color = Colors.green.shade600;
+    Color? color = Colors.purple.shade400;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: const Color(0xFFE9EFC0),
+        backgroundColor: const Color(0xFFC5CAE9),
         iconTheme: const IconThemeData(color: Colors.black),
         elevation: 0.0,
         centerTitle: true,
@@ -36,7 +36,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Navigator.of(context).pushReplacement(
               MaterialPageRoute(
                 builder: (context) => const NavigationLayout(
-                  isConsumer: true,
+                  isConsumer: false,
                 ),
               ),
             );

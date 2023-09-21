@@ -40,7 +40,7 @@ class AddProductsScreenState extends State<AddProductsScreen> {
               fontSize: 24, color: Theme.of(context).secondaryHeaderColor, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
-        backgroundColor: const Color(0xFFE9EFC0),
+        backgroundColor: const Color(0xFFC5CAE9),
         iconTheme: const IconThemeData(color: Colors.black),
       ),
       body: Container(

@@ -87,7 +87,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
     Size? size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFE9EFC0),
+        backgroundColor: const Color(0xFFC5CAE9),
         centerTitle: true,
         elevation: 0,
         title: Row(
@@ -169,7 +169,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     width: size.width * 0.16,
                     child: Text(
                       "Rs. " + widget.totalPrice! + " /-",
-                      style: GoogleFonts.montserrat(fontSize: 19, color: Colors.green.shade600),
+                      style: GoogleFonts.montserrat(fontSize: 19, color: Colors.purple.shade400),
                     ),
                   ),
                 ),
@@ -179,7 +179,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               padding: EdgeInsets.all(8.0),
               child: CustomDividerView(
                 dividerHeight: 1.0,
-                color: Color(0xFFE9EFC0),
+                color: Color(0xFFC5CAE9),
               ),
             ),
             InputOutputRow("Value of Product", "Rs. ${widget.totalPrice!} /-"),
@@ -193,7 +193,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               padding: EdgeInsets.all(8.0),
               child: CustomDividerView(
                 dividerHeight: 1.0,
-                color: Color(0xFFE9EFC0),
+                color: Color(0xFFC5CAE9),
               ),
             ),
             Padding(
@@ -204,7 +204,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   height: size.height * .08,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        primary: const Color(0xFFB4E197),
+                        primary: const Color(0xFF7986CB),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
                     child: Center(
                       child: Text(

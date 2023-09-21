@@ -108,9 +108,9 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
     Size? size = MediaQuery.of(context).size;
     Color? color = Colors.redAccent.shade700;
     return Scaffold(
-      backgroundColor: const Color(0xFFE9EFC0),
+      backgroundColor: const Color(0xFFC5CAE9),
       appBar: AppBar(
-        backgroundColor: const Color(0xFFE9EFC0),
+        backgroundColor: const Color(0xFFC5CAE9),
         title: Text(
           'Product Details',
           style: GoogleFonts.montserrat(
@@ -211,7 +211,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     ),
                     const CustomDividerView(
                       dividerHeight: 1.0,
-                      color: Color(0xFFE9EFC0),
+                      color: Color(0xFFC5CAE9),
                     ),
                     // const SizedBox(height: 8),
                     // Column(
@@ -271,7 +271,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                         Container(
                           decoration: BoxDecoration(
                             border: Border.all(
-                              color: const Color(0xFFB4E197),
+                              color: const Color(0xFF7986CB),
                               width: 1,
                             ),
                             borderRadius: BorderRadius.circular(10),
@@ -286,8 +286,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                                     width: size.width * 0.22,
                                     child: CountStepper(
                                       splashRadius: 26,
-                                      iconColor: Color(0xFFB4E197),
-                                      iconIncrementColor: Color(0xFFB4E197),
+                                      iconColor: Color(0xFF7986CB),
+                                      iconIncrementColor: Color(0xFF7986CB),
                                       defaultValue: 1,
                                       max: widget.productData!['balance_qty'] ?? 1,
                                       min: 1,
@@ -342,7 +342,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                                     height: size.height * .08,
                                     child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
-                                          primary: const Color(0xFFB4E197),
+                                          primary: const Color(0xFF7986CB),
                                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
                                       child: Text(
                                         "One-time Buy",
@@ -373,7 +373,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                                     height: size.height * .08,
                                     child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
-                                          primary: const Color(0xFFB4E197),
+                                          primary: const Color(0xFF7986CB),
                                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
                                       child: Text(
                                         "Contract Buy",

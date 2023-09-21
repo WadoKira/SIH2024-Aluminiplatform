@@ -170,7 +170,7 @@ class _OtpScreenState extends State<OtpScreen> {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: Colors.green,
+              primary: Colors.purple.shade400,
             ),
             onPressed: () async {
               await verifyPhoneSendOtp(phone: widget.phone);

@@ -99,7 +99,7 @@ class _ContractBuyCheckoutScreenState extends State<ContractBuyCheckoutScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: const Color(0xFFE9EFC0),
+        backgroundColor: const Color(0xFFC5CAE9),
         elevation: 0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -242,7 +242,7 @@ class _ContractBuyCheckoutScreenState extends State<ContractBuyCheckoutScreen> {
               padding: EdgeInsets.all(8.0),
               child: CustomDividerView(
                 dividerHeight: 1.0,
-                color: Color(0xFFE9EFC0),
+                color: Color(0xFFC5CAE9),
               ),
             ),
             InputOutputRow("Value of Product", "Rs. ${int.parse(widget.totalPrice!) * 30 * days!} /-", ""),
@@ -256,7 +256,7 @@ class _ContractBuyCheckoutScreenState extends State<ContractBuyCheckoutScreen> {
               padding: EdgeInsets.all(8.0),
               child: CustomDividerView(
                 dividerHeight: 1.0,
-                color: Color(0xFFE9EFC0),
+                color: Color(0xFFC5CAE9),
               ),
             ),
             Padding(
@@ -267,7 +267,7 @@ class _ContractBuyCheckoutScreenState extends State<ContractBuyCheckoutScreen> {
                   height: size.height * .08,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        primary: const Color(0xFFB4E197),
+                        primary: const Color(0xFF7986CB),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
                     child: Center(
                       child: Text(

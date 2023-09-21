@@ -49,7 +49,7 @@ class AuthScreen extends StatelessWidget {
             margin: const EdgeInsets.only(left: 50, right: 50),
             child: Center(
               child: AutoSizeText(
-                'Application for using food waste as consumable organic resource',
+                'Application for Business minds to connect with potential consumers',
                 style: GoogleFonts.montserrat(
                   fontSize: 20,
                   color: Theme.of(context).secondaryHeaderColor.withAlpha(900),

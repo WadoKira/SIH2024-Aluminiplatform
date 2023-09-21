@@ -72,7 +72,7 @@ class _MapWidgetState extends State<MapWidget> {
                         ),
                         const Icon(
                           Icons.location_on,
-                          color: Colors.green,
+                          color: Colors.purple,
                           size: 40,
                         ),
                       ],
