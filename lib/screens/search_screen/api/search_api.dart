@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
 
-import 'package:hexabyte/utils/utils.dart';
+import '../../../utils/utils.dart';
 
 class SearchApi {
   static Future<List<dynamic>> productSearch({

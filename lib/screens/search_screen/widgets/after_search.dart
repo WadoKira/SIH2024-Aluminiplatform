@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexabyte/screens/search_screen/api/search_api.dart';
-import 'package:hexabyte/screens/search_screen/widgets/after_search_card.dart';
-import 'package:hexabyte/screens/search_screen/widgets/map.dart';
+import 'map.dart';
+
+import '../api/search_api.dart';
+import 'after_search_card.dart';
 
 class AfterSearch extends StatefulWidget {
   final Function goBackToFirstSearch;

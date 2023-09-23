@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexabyte/screens/product_details_screen/product_details_screen.dart';
+import '../../../screens/product_details_screen/product_details_screen.dart';
 import 'package:recase/recase.dart';
 
 class AfterSearchCard extends StatelessWidget {

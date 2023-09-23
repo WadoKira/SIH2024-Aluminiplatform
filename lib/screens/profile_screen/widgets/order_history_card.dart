@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:hexabyte/common/custom_divider.dart';
-import 'package:hexabyte/common/dotted_seperator.dart';
+import '../../../common/custom_divider.dart';
+import '../../../common/dotted_seperator.dart';
 
 class OrderHistoryCard extends StatelessWidget {
   const OrderHistoryCard({Key? key}) : super(key: key);

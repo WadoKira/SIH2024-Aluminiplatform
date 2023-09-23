@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexabyte/screens/producer_active_order_screen/api/listed_products_api.dart';
-import 'package:hexabyte/screens/producer_active_order_screen/widgets/active_order_card.dart';
+import '../../screens/producer_active_order_screen/api/listed_products_api.dart';
+import '../../screens/producer_active_order_screen/widgets/active_order_card.dart';
 
 class ActiveOrderScreen extends StatefulWidget {
   const ActiveOrderScreen({Key? key}) : super(key: key);

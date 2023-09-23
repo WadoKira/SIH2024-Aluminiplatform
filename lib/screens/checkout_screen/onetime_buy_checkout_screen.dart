@@ -4,8 +4,8 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexabyte/screens/product_details_screen/api/purchase_product_api.dart';
-import 'package:hexabyte/screens/product_details_screen/widgets/payment_success_screen.dart';
+import '../../screens/product_details_screen/api/purchase_product_api.dart';
+import '../../screens/product_details_screen/widgets/payment_success_screen.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:recase/recase.dart';
 

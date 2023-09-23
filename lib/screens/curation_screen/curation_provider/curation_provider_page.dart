@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexabyte/screens/curation_screen/api/curation_api.dart';
-import 'package:hexabyte/utils/utils.dart';
+import '../../../screens/curation_screen/api/curation_api.dart';
+import '../../../utils/utils.dart';
 import 'package:recase/recase.dart';
 
 import '../../profile_screen/profile_screen.dart';

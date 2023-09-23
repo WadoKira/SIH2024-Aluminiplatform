@@ -5,8 +5,8 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 // import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexabyte/screens/otp_screen/otp_screen.dart';
-import 'package:hexabyte/utils/utils.dart';
+import '../../screens/otp_screen/otp_screen.dart';
+import '../../utils/utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // import 'package:provider/provider.dart';

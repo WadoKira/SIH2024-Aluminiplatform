@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexabyte/screens/producer_order_history_screen/api/producer_order_history_api.dart';
-import 'package:hexabyte/screens/producer_order_history_screen/widgets/producer_order_history_card.dart';
+import '../../screens/producer_order_history_screen/api/producer_order_history_api.dart';
+import '../../screens/producer_order_history_screen/widgets/producer_order_history_card.dart';
 
 class ProducerOrderHistoryScreen extends StatefulWidget {
   const ProducerOrderHistoryScreen({Key? key}) : super(key: key);

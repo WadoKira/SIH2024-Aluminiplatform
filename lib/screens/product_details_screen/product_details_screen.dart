@@ -2,10 +2,10 @@ import 'package:count_stepper/count_stepper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexabyte/common/custom_divider.dart';
-import 'package:hexabyte/screens/checkout_screen/contract_buy_checkout_screen.dart';
-import 'package:hexabyte/screens/checkout_screen/onetime_buy_checkout_screen.dart';
-import 'package:hexabyte/screens/search_screen/search_screen.dart';
+import '../../common/custom_divider.dart';
+import '../../screens/checkout_screen/contract_buy_checkout_screen.dart';
+import '../../screens/checkout_screen/onetime_buy_checkout_screen.dart';
+import '../../screens/search_screen/search_screen.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:recase/recase.dart';
 

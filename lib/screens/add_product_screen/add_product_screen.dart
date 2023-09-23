@@ -6,12 +6,12 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexabyte/layout/nav_layout.dart';
-import 'package:hexabyte/screens/add_product_screen/api/add_product_api.dart';
-import 'package:hexabyte/screens/add_product_screen/config/form_structure.dart';
-import 'package:hexabyte/utils/utils.dart';
+import '../../screens/add_product_screen/api/add_product_api.dart';
+import '../../screens/add_product_screen/config/form_structure.dart';
+import '../../utils/utils.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:recase/recase.dart';
+import '../../layout/nav_Layout.dart';
 
 class AddProductsScreen extends StatefulWidget {
   const AddProductsScreen({Key? key}) : super(key: key);

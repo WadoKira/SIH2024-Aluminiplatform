@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hexabyte/screens/product_details_screen/product_details_screen.dart';
-import 'package:hexabyte/utils/utils.dart';
+
+import '../../../utils/utils.dart';
 import 'package:recase/recase.dart';
+
+import '../../product_details_screen/product_details_screen.dart';
 
 class InfoCard extends StatelessWidget {
   final Map<dynamic, dynamic> productData;

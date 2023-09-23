@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexabyte/common/dotted_seperator.dart';
-import 'package:hexabyte/utils/app_colors.dart';
+import '../../../common/dotted_seperator.dart';
 import 'package:recase/recase.dart';
 
 class ListedProductCard extends StatelessWidget {

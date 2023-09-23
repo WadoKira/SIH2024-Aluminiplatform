@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:http/http.dart' as http;
 
-import 'package:hexabyte/utils/utils.dart';
+import '../../../utils/utils.dart';
 
 class CurationApi {
   static Future<Map<dynamic, dynamic>> getCurationData({required Map data}) async {

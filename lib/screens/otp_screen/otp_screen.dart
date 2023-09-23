@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexabyte/screens/onboarding_screen/onboarding_screen.dart';
-import 'package:hexabyte/screens/select_role_screen.dart/select_role_screen.dart';
+import '../../screens/Welcome/Welcome.dart';
+import '../../screens/select_role_screen.dart/select_role_screen.dart';
 import 'package:pinput/pinput.dart';
 
 import '../../utils/utils.dart';
@@ -29,7 +29,7 @@ class _OtpScreenState extends State<OtpScreen> {
     await FirebaseAuth.instance.verifyPhoneNumber(
         phoneNumber: '+91$phone',
         verificationCompleted: (PhoneAuthCredential credentials) async {
-          Fluttertoast.showToast(msg: 'Verification done!', toastLength: Toast.LENGTH_LONG);
+          Fluttertoast.showToast(msg: 'Process done!!!', toastLength: Toast.LENGTH_LONG);
         },
         verificationFailed: (e) {
           print(e);
@@ -146,7 +146,7 @@ class _OtpScreenState extends State<OtpScreen> {
                     await EasyLoading.dismiss();
                     navContext.pushAndRemoveUntil(
                         MaterialPageRoute(
-                          builder: (context) => const SelectRoleScreen(),
+                          builder: (context) => const WelcomePage(),
                         ),
                         (route) => false);
                   }
@@ -170,7 +170,7 @@ class _OtpScreenState extends State<OtpScreen> {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: Colors.purple.shade400,
+              primary: Utils.primaryColor,
             ),
             onPressed: () async {
               await verifyPhoneSendOtp(phone: widget.phone);

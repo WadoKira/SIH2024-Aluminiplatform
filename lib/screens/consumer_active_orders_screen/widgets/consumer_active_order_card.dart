@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexabyte/common/dotted_seperator.dart';
-import 'package:hexabyte/screens/consumer_active_orders_screen/api/consumer_active_order_api.dart';
-import 'package:hexabyte/utils/app_colors.dart';
+import '../../../common/dotted_seperator.dart';
+import '../../../screens/consumer_active_orders_screen/api/consumer_active_order_api.dart';
+import '../../../utils/app_colors.dart';
 
 class ConsumerActiveOrderCard extends StatelessWidget {
   // final dynamic status;

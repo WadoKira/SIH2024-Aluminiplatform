@@ -1,120 +1,98 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-class HomeScreenCard extends StatefulWidget {
+class HomeScreenCard extends StatelessWidget {
   final String? sloganText, descriptionText, buttonText, imageUrl;
-  final IconData? icon;
+  final VoidCallback? onTap;
   final Color? color;
-  final Widget? navigatorWidget;
 
-  const HomeScreenCard(
-      {super.key,
-      this.imageUrl,
-      this.sloganText,
-      this.descriptionText,
-      this.buttonText,
-      this.icon,
-      this.color,
-      this.navigatorWidget});
+  const HomeScreenCard({
+    Key? key,
+    this.imageUrl,
+    this.sloganText,
+    this.descriptionText,
+    this.buttonText,
+    this.onTap,
+    this.color,
+  }) : super(key: key);
 
-  @override
-  State<HomeScreenCard> createState() => _HomeScreenCardState();
-}
-
-class _HomeScreenCardState extends State<HomeScreenCard> {
   @override
   Widget build(BuildContext context) {
-    Size? size = MediaQuery.of(context).size;
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 8),
-      child: Center(
-        child: Container(
-          width: size.width * 0.92,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              color: Colors.white,
-              boxShadow: [BoxShadow(color: Colors.black.withAlpha(100), blurRadius: 2, spreadRadius: 0.5)]),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                height: size.height * 0.30,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(widget.imageUrl!),
-                    )),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(16.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.2),
+              blurRadius: 6.0,
+              offset: const Offset(0, 3),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(16.0)),
+              child: Image.network(
+                imageUrl!,
+                width: double.infinity,
+                height: 200.0,
+                fit: BoxFit.cover,
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(12.0, 20, 12, 6),
-                child: Text(
-                  widget.sloganText!,
-                  style: GoogleFonts.montserrat(
-                    color: widget.color,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 32,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(12, 12, 0, 25),
-                child: Text(
-                  widget.descriptionText!,
-                  style: GoogleFonts.nunito(
-                    color: widget.color,
-                    fontSize: 22,
-                  ),
-                ),
-              ),
-              Center(
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(14.0, 14, 14, 26),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => widget.navigatorWidget!));
-                    },
-                    child: Container(
-                      height: size.height * 0.075,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(22),
-                        border: Border.all(
-                          color: widget.color!,
-                        ),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              widget.buttonText!,
-                              style: GoogleFonts.montserrat(
-                                fontSize: 17,
-                                color: widget.color!,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(right: 8.0),
-                              child: Icon(
-                                widget.icon!,
-                                size: 32,
-                                color: widget.color,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    sloganText!,
+                    style: TextStyle(
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
+                  const SizedBox(height: 8.0),
+                  Text(
+                    descriptionText!,
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              alignment: Alignment.center,
+              padding: const EdgeInsets.all(16.0),
+              child: ElevatedButton(
+                onPressed: onTap,
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.white,
+                  onPrimary: color,
+                  padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
                 ),
-              )
-            ],
-          ),
+                child: Text(
+                  buttonText!,
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
 }
+

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexabyte/layout/nav_layout.dart';
-import 'package:hexabyte/screens/listed_products_screen/api/listed_products_api.dart';
-import 'package:hexabyte/screens/listed_products_screen/widgets/listed_product_card.dart';
+import '../../screens/listed_products_screen/api/listed_products_api.dart';
+import '../../screens/listed_products_screen/widgets/listed_product_card.dart';
 
 class ListedProductsScreen extends StatefulWidget {
   const ListedProductsScreen({Key? key}) : super(key: key);

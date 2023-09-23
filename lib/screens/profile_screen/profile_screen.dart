@@ -2,10 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexabyte/layout/nav_layout.dart';
-import 'package:hexabyte/screens/auth_screen/auth_screen.dart';
-import 'package:hexabyte/screens/profile_screen/api/profile_screen_api.dart';
-import 'package:hexabyte/screens/select_role_screen.dart/select_role_screen.dart';
+import '../../layout/nav_layout.dart';
+import '../../screens/auth_screen/auth_screen.dart';
+import '../../screens/profile_screen/api/profile_screen_api.dart';
+import '../../screens/select_role_screen.dart/select_role_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);

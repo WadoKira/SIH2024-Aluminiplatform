@@ -3,7 +3,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexabyte/screens/curation_screen/curation_provider/curation_provider_page.dart';
+import '../../screens/curation_screen/curation_provider/curation_provider_page.dart';
 import 'package:recase/recase.dart';
 
 import '../../utils/utils.dart';

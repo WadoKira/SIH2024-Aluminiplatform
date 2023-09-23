@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexabyte/common/dotted_seperator.dart';
+import '../../../common/dotted_seperator.dart';
 
 class ProducerOrderHistoryCard extends StatelessWidget {
   final dynamic customerName;

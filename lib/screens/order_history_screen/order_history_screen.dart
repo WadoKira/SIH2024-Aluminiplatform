@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexabyte/layout/nav_layout.dart';
-import 'package:hexabyte/screens/order_history_screen/api/order_history_api.dart';
-import 'package:hexabyte/screens/order_history_screen/widgets/order_history_card.dart';
+import '../../layout/nav_layout.dart';
+import '../../screens/order_history_screen/api/order_history_api.dart';
+import '../../screens/order_history_screen/widgets/order_history_card.dart';
 
 class OrderHistoryScreen extends StatelessWidget {
   const OrderHistoryScreen({Key? key}) : super(key: key);
@@ -18,7 +18,7 @@ class OrderHistoryScreen extends StatelessWidget {
         elevation: 0.0,
         centerTitle: true,
         title: Text(
-          "My orders",
+          "My Orders",
           style: GoogleFonts.montserrat(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
         ),
         backgroundColor: Colors.white,

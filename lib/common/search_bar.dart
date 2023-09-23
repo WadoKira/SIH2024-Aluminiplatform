@@ -29,7 +29,7 @@ class SearchBar extends StatelessWidget {
           // UIHelper.horizontalSpaceMedium(),
           Expanded(
             child: Text(
-              'Search for items',
+              'Search',
               style: Theme.of(context).textTheme.subtitle1!.copyWith(
                     color: Colors.grey[700],
                     fontWeight: FontWeight.bold,

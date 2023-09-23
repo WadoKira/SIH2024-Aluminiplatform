@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:hexabyte/screens/auth_screen/auth_screen.dart';
-import 'package:hexabyte/screens/loading_screen/loading_screen.dart';
-import 'package:hexabyte/screens/select_role_screen.dart/select_role_screen.dart';
+import '../../screens/Welcome/Welcome.dart';
+import '../../screens/auth_screen/auth_screen.dart';
+import '../../screens/loading_screen/loading_screen.dart';
 
 class IntermediateScreen extends StatelessWidget {
   final Future<FirebaseApp> _initFirebaseSdk = Firebase.initializeApp();
@@ -30,7 +30,7 @@ class IntermediateScreen extends StatelessWidget {
               } else {
                 navContext.pushReplacement(
                   MaterialPageRoute(
-                    builder: (context) => const SelectRoleScreen(),
+                    builder: (context) => const WelcomePage(),
                   ),
                 );
               }

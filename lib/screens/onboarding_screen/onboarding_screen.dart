@@ -6,10 +6,10 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexabyte/screens/onboarding_screen/api/onboading_api.dart';
-import 'package:hexabyte/screens/onboarding_screen/config/form_structure.dart';
-import 'package:hexabyte/screens/select_role_screen.dart/select_role_screen.dart';
-import 'package:hexabyte/utils/utils.dart';
+import '../../screens/onboarding_screen/api/onboading_api.dart';
+import '../../screens/onboarding_screen/config/form_structure.dart';
+import '../../screens/select_role_screen.dart/select_role_screen.dart';
+import '../../utils/utils.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);

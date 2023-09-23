@@ -2,7 +2,9 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-import 'package:hexabyte/utils/utils.dart';
+import '../../../utils/utils.dart';
+
+
 
 class OnboardingApi {
   static Future<int> dataCollection({required Map data}) async {

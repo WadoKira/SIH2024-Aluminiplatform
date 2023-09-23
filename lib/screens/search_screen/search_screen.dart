@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hexabyte/screens/search_screen/widgets/after_search.dart';
+import '../../screens/search_screen/widgets/after_search.dart';
 
-import 'package:hexabyte/screens/search_screen/widgets/before_search.dart';
+import '../../screens/search_screen/widgets/before_search.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);

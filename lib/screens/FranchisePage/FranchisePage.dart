@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexabyte/layout/nav_layout.dart';
-import 'package:hexabyte/screens/order_history_screen/api/order_history_api.dart';
-import 'package:hexabyte/screens/order_history_screen/widgets/order_history_card.dart';
+import '../../screens/order_history_screen/api/order_history_api.dart';
+import '../../screens/order_history_screen/widgets/order_history_card.dart';
+
+import '../../layout/nav_Layout.dart';
 
 class FranchisePage extends StatelessWidget {
   const FranchisePage({Key? key}) : super(key: key);
@@ -27,7 +27,7 @@ class FranchisePage extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).pushReplacement(MaterialPageRoute(
                 builder: (context) => const NavigationLayout(
-                      isConsumer: true,
+                      isConsumer: false,
                     )));
           },
         ),
