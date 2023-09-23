@@ -1,3 +1,3 @@
 # Intersect - Application
 
-Application for using food waste as consumable organic resource.
+Mobile app to bridge the gap between small business enterprises and their potential customers
