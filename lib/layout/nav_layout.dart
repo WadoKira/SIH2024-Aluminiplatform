@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hexabyte/screens/DataInsightsPage/Graph1.dart';
 import '../../screens/DataInsightsPage/DataInsightsPage.dart';
 import '../../screens/consumer_active_orders_screen/consumer_active_orders_screen.dart';
 import '../../screens/home_screen/home_screen.dart';
@@ -24,7 +25,7 @@ class NavigationLayoutState extends State<NavigationLayout> {
     final tabNavigations = widget.isConsumer
         ? [
       //const ListedProductsScreen(),
-      const HomeScreen(),
+      const ConsumerHomeScreen(),
       //const AddProductsScreen(),
       const ConsumerActiveOrdersScreen(),
       //const ProducerOrderHistoryScreen(),
@@ -32,7 +33,7 @@ class NavigationLayoutState extends State<NavigationLayout> {
         : [
       const HomeScreen(),
       const ConsumerActiveOrdersScreen(),
-      const DataInsightsPage(),
+      const Graph1(),
       //const QuickBuyScreen(),
       //const CurationScreen(),
       //const OrderHistoryScreen(),

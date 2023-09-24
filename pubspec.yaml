@@ -1,4 +1,4 @@
-name: Intersect
+name: hexabyte
 description: Application to bridge the gap between small and micro enterprises and their potential customers
 
 publish_to: 'none'
@@ -12,6 +12,7 @@ dependencies:
 
   flutter:
     sdk: flutter
+  fl_chart: ^0.41.0
   url_launcher: ^6.0.12
   firebase_core: ^1.13.1
   firebase_auth: ^3.3.9
@@ -44,6 +45,10 @@ dependencies:
   file: ^6.1.4
   intl: ^0.17.0
   flutter_profile_picture: ^2.0.0
+  dio: any
+  dio_http_cache: any
+  syncfusion_flutter_charts: ^19.1.54
+
 
 dev_dependencies:
   flutter_test:
@@ -61,6 +66,7 @@ flutter_icons:
 # product details page, user orders page.
 
 flutter:
+
   uses-material-design: true
 
   assets:

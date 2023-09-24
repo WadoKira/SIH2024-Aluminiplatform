@@ -8,14 +8,14 @@ import '../../layout/nav_layout.dart';
 import '../../screens/order_history_screen/api/order_history_api.dart';
 import '../../screens/order_history_screen/widgets/order_history_card.dart';
 
-class ThunderDealsPage extends StatefulWidget {
-  const ThunderDealsPage({Key? key}) : super(key: key);
+class ConsumerLogisticsPage extends StatefulWidget {
+  const ConsumerLogisticsPage({Key? key}) : super(key: key);
 
   @override
-  State<ThunderDealsPage> createState() => _ThunderDealsPage();
+  State<ConsumerLogisticsPage> createState() => _ConsumerLogisticsPage();
 }
 
-class _ThunderDealsPage extends State<ThunderDealsPage> {
+class _ConsumerLogisticsPage extends State<ConsumerLogisticsPage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -26,7 +26,7 @@ class _ThunderDealsPage extends State<ThunderDealsPage> {
         elevation: 0.0,
         centerTitle: true,
         title: Text(
-          "ThunderDeals",
+          "Logistics",
           style: GoogleFonts.montserrat(
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -48,14 +48,14 @@ class _ThunderDealsPage extends State<ThunderDealsPage> {
       body: Container(
         width: size.width,
         height: size.height,
-        color: const Color(0xFFC5CAE9), // Background color
-        child: ThunderDealsData == null
+        color: const Color(0xFFE7ECFF), // Background color
+        child: logisticsData == null
             ? Center(child: CircularProgressIndicator())
             : ListView.builder(
           shrinkWrap: true,
           physics: BouncingScrollPhysics(),
           scrollDirection: Axis.vertical,
-          itemCount: ThunderDealsData.length,
+          itemCount: logisticsData.length,
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.all(15.0),
@@ -85,7 +85,7 @@ class _ThunderDealsPage extends State<ThunderDealsPage> {
                               image: DecorationImage(
                                 fit: BoxFit.cover,
                                 image: NetworkImage(
-                                  "https://thunderr-deals.myshopify.com/cdn/shop/files/Thunder_4.jpg?v=1646483404",
+                                  "https://img.freepik.com/free-photo/truck-with-trailer-road_1340-32492.jpg",
                                 ),
                               ),
                             ),
@@ -97,7 +97,7 @@ class _ThunderDealsPage extends State<ThunderDealsPage> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    ThunderDealsData?[index]['Name'],
+                                    logisticsData?[index]['Name'],
                                     overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
@@ -106,7 +106,7 @@ class _ThunderDealsPage extends State<ThunderDealsPage> {
                                   ),
                                   SizedBox(height: 5),
                                   Text(
-                                    ThunderDealsData![index]['Overview'].toString(),
+                                    logisticsData![index]['Transporting_Vehicle'].toString(),
                                     overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
                                       fontSize: 16,
@@ -114,7 +114,15 @@ class _ThunderDealsPage extends State<ThunderDealsPage> {
                                   ),
                                   SizedBox(height: 5),
                                   Text(
-                                    "Rs. ${ThunderDealsData?[index]['Pricing'].toString()}",
+                                    logisticsData![index]['Source_Departure'].toString(),
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                  SizedBox(height: 5),
+                                  Text(
+                                    "Rs. ${logisticsData?[index]['Cost_Fee'].toString()}",
                                     textAlign: TextAlign.start,
                                     style: TextStyle(
                                       fontSize: 17,
@@ -141,17 +149,17 @@ class _ThunderDealsPage extends State<ThunderDealsPage> {
 
   @override
   void initState() {
-    getTrendingDataFromVahanDB("https://platformwaste-api.onrender.com/api/PlatformWaste");
+    getTrendingDataFromVahanDB("https://logistics-api-utlh.onrender.com/api/Logistics");
   }
 
-  var ThunderDealsData;
+  var logisticsData;
   DioCacheManager _dioCacheManager = DioCacheManager(CacheConfig());
 
   void getTrendingDataFromVahanDB(String? url) async {
     final response = await http.get(Uri.parse(url!));
 
     setState(() {
-      ThunderDealsData = jsonDecode(response.body)['response'];
+      logisticsData = jsonDecode(response.body)['response'];
     });
   }
 }

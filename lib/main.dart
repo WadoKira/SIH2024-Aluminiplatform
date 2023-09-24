@@ -1,5 +1,12 @@
-import 'package:Intersect/screens/Welcome/Welcome.dart';
-import 'package:Intersect/screens/intermediate_screen/intermediate_screen.dart';
+
+import '../screens/DataInsightsPage/DataInsightsPage.dart';
+import '../screens/DataInsightsPage/Graph1.dart';
+
+import '../../screens/ThunderDealsPage/ThunderDealsPage.dart';
+
+import '../screens/FranchisePage/FranchisePage.dart';
+import '../screens/Welcome/Welcome.dart';
+import '../screens/intermediate_screen/intermediate_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -34,8 +41,9 @@ class MyApp extends StatelessWidget {
           localizationsDelegates: const [
             FormBuilderLocalizations.delegate,
           ],
-          home: WelcomePage(),
-          //home:IntermediateScreen(),
+          //home: WelcomePage(),
+          //home:Graph1(),
+          home:IntermediateScreen(),
           builder: EasyLoading.init(),
         );
       },

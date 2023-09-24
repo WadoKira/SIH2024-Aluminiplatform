@@ -7,15 +7,14 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../layout/nav_layout.dart';
 import '../../screens/order_history_screen/api/order_history_api.dart';
 import '../../screens/order_history_screen/widgets/order_history_card.dart';
-
-class ThunderDealsPage extends StatefulWidget {
-  const ThunderDealsPage({Key? key}) : super(key: key);
+class ConsumerFranchisePage extends StatefulWidget {
+  const ConsumerFranchisePage({Key? key}) : super(key: key);
 
   @override
-  State<ThunderDealsPage> createState() => _ThunderDealsPage();
+  State<ConsumerFranchisePage> createState() => _ConsumerFranchisePageState();
 }
 
-class _ThunderDealsPage extends State<ThunderDealsPage> {
+class _ConsumerFranchisePageState extends State<ConsumerFranchisePage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -26,7 +25,7 @@ class _ThunderDealsPage extends State<ThunderDealsPage> {
         elevation: 0.0,
         centerTitle: true,
         title: Text(
-          "ThunderDeals",
+          "Franchises",
           style: GoogleFonts.montserrat(
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -48,14 +47,14 @@ class _ThunderDealsPage extends State<ThunderDealsPage> {
       body: Container(
         width: size.width,
         height: size.height,
-        color: const Color(0xFFC5CAE9), // Background color
-        child: ThunderDealsData == null
+        color: const Color(0xFFE7ECFF), // Background color
+        child: franchiseData == null
             ? Center(child: CircularProgressIndicator())
             : ListView.builder(
           shrinkWrap: true,
           physics: BouncingScrollPhysics(),
           scrollDirection: Axis.vertical,
-          itemCount: ThunderDealsData.length,
+          itemCount: franchiseData.length,
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.all(15.0),
@@ -63,7 +62,9 @@ class _ThunderDealsPage extends State<ThunderDealsPage> {
                 width: size.width * 0.5,
                 height: size.height * 0.2, // Adjust the height as needed
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    // Handle onTap action
+                  },
                   child: Card(
                     elevation: 10,
                     child: Container(
@@ -85,8 +86,7 @@ class _ThunderDealsPage extends State<ThunderDealsPage> {
                               image: DecorationImage(
                                 fit: BoxFit.cover,
                                 image: NetworkImage(
-                                  "https://thunderr-deals.myshopify.com/cdn/shop/files/Thunder_4.jpg?v=1646483404",
-                                ),
+                                    "https://img.freepik.com/premium-vector/businessman-shake-hands-with-real-estate-business-franchise-shop-business-sme-flat-vector_101179-2110.jpg"),
                               ),
                             ),
                           ),
@@ -97,16 +97,16 @@ class _ThunderDealsPage extends State<ThunderDealsPage> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    ThunderDealsData?[index]['Name'],
+                                    franchiseData?[index]['Franchise_Name'],
                                     overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 20, // Adjust the font size as needed
+                                      fontSize: 20,
                                     ),
                                   ),
                                   SizedBox(height: 5),
                                   Text(
-                                    ThunderDealsData![index]['Overview'].toString(),
+                                    franchiseData![index]['Description'].toString(),
                                     overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
                                       fontSize: 16,
@@ -114,8 +114,7 @@ class _ThunderDealsPage extends State<ThunderDealsPage> {
                                   ),
                                   SizedBox(height: 5),
                                   Text(
-                                    "Rs. ${ThunderDealsData?[index]['Pricing'].toString()}",
-                                    textAlign: TextAlign.start,
+                                    "Rs. ${franchiseData?[index]['Investments'].toString()}",
                                     style: TextStyle(
                                       fontSize: 17,
                                       fontWeight: FontWeight.bold,
@@ -141,17 +140,17 @@ class _ThunderDealsPage extends State<ThunderDealsPage> {
 
   @override
   void initState() {
-    getTrendingDataFromVahanDB("https://platformwaste-api.onrender.com/api/PlatformWaste");
+    getTrendingDataFromVahanDB("https://franchises-api.onrender.com/api/franchise");
   }
 
-  var ThunderDealsData;
+  var franchiseData;
   DioCacheManager _dioCacheManager = DioCacheManager(CacheConfig());
 
   void getTrendingDataFromVahanDB(String? url) async {
     final response = await http.get(Uri.parse(url!));
 
     setState(() {
-      ThunderDealsData = jsonDecode(response.body)['response'];
+      franchiseData = jsonDecode(response.body)['response'];
     });
   }
 }

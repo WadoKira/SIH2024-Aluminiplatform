@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../screens/FranchisePage/FranchisePage.dart';
-import '../../screens/GoodsPage/GoodsPage.dart';
-import '../../screens/ScrapsPage/ScrapsPage.dart';
+import '../../screens/ScrapsPage/WareHousePage.dart';
 import '../../screens/home_screen/widgets/home_screen_card.dart';
 import '../../screens/home_screen/widgets/search_bar.dart';
 import '../../screens/LogisticsPage/LogisticsPage.dart';
@@ -96,12 +95,10 @@ class HomeScreen extends StatelessWidget {
               ScrollableCategories(
                 categories: categories,
                 categoriesImgList: categoriesImg,
-                widget: const [
-                  ThunderDealsPage(),
+                widget:  [
                   FranchisePage(),
                   LogisticsPage(),
-                  ScrapsPage(),
-                  GoodsPage(),
+                  WareHousePage(),
                 ],
                 // Customize the appearance of ScrollableCategories here
                 // You can adjust colors, fonts, padding, etc.
@@ -173,17 +170,13 @@ class HomeScreen extends StatelessWidget {
 }
 
 List<String?> categories = [
-  "Hot",
   "Franchise",
   "Logistics",
-  'Scraps',
-  'Goods',
+  'Goodown',
 ];
 
 List<String?> categoriesImg = [
-  "assets/Hot.png",
   "assets/Franchise.png",
   "assets/Logistics.png",
   "assets/Scraps.png",
-  "assets/Goods.png",
 ];

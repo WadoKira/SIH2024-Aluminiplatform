@@ -13,7 +13,8 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'package:recase/recase.dart';
 import '../../layout/nav_Layout.dart';
 
-class AddProductsScreen extends StatefulWidget {
+class
+AddProductsScreen extends StatefulWidget {
   const AddProductsScreen({Key? key}) : super(key: key);
 
   @override

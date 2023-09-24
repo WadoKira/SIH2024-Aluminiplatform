@@ -1,4 +1,4 @@
-import 'package:Intersect/screens/RegistrationPage/RegistrationPage.dart';
+import '../../screens/RegistrationPage/RegistrationPage.dart';
 import 'package:flutter/material.dart';
 import '../../screens/select_role_screen.dart/select_role_screen.dart';
 
@@ -30,7 +30,7 @@ class WelcomePage extends StatelessWidget {
             ),
             SizedBox(height: 16),
             Text(
-              "Empower your business with our all-in-one platform that seamlessly connects producers with customers.",
+              "We Intersect U!",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,

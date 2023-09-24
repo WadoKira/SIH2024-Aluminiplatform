@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hexabyte/screens/profile_screen/CreateProfilePage.dart';
 import '../home_screen/widgets/home_screen_card.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import '../select_role_screen.dart/select_role_screen.dart';
@@ -38,7 +39,7 @@ class RegistrationPage extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => SelectRoleScreen(),
+                  builder: (context) => CreateProfilePage(),
                 ),
               );
             },
@@ -52,7 +53,7 @@ class RegistrationPage extends StatelessWidget {
               elevation: 5, // Add elevation for a shadow effect
             ),
             child: Text(
-              'Go to Select Role Page',
+              'Create Profile',
               style: TextStyle(
                 fontSize: 18, // Adjust text size as needed
               ),

@@ -1,79 +1,126 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:dio/dio.dart';
+import 'package:dio_http_cache/dio_http_cache.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../screens/consumer_active_orders_screen/api/consumer_active_order_api.dart';
-import '../../screens/consumer_active_orders_screen/widgets/consumer_active_order_card.dart';
-import '../order_history_screen/widgets/order_history_card.dart';
-import '../order_history_screen/api/order_history_api.dart';
+import '../../layout/nav_layout.dart';
+import '../../screens/order_history_screen/api/order_history_api.dart';
+import '../../screens/order_history_screen/widgets/order_history_card.dart';
+
 class DataInsightsPage extends StatefulWidget {
-  const DataInsightsPage({Key? key}) : super(key: key);
+  DataInsightsPage({Key? key, required this.title}) : super(key: key);
+
+  final String title;
 
   @override
-  State<DataInsightsPage> createState() => _DataInsightsPage();
+  _DataInsightsPageState createState() => _DataInsightsPageState();
 }
 
-class _DataInsightsPage extends State<DataInsightsPage> {
-  List data = [];
+class _DataInsightsPageState extends State<DataInsightsPage> {
+  late List<GDPData> _chartData;
+  var franchiseData;
+
+  @override
+  void initState() {
+    super.initState();
+    _chartData = getChartData();
+    getTrendingDataFromVahanDB("https://franchises-api.onrender.com/api/franchise");
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFC5CAE9),
-      appBar: AppBar(
-        backgroundColor: const Color(0xFFC5CAE9),
-        elevation: 0,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              'Data Insights',
-              style: GoogleFonts.montserrat(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          iconTheme: const IconThemeData(color: Colors.black),
+          elevation: 0.0,
+          centerTitle: true,
+          title: Text(
+            widget.title,
+            style: const TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+          backgroundColor: const Color(0xFFC5CAE9),
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) =>
+                  const NavigationLayout(isConsumer: false),
+                ),
+              );
+            },
+          ),
+        ),
+        body: SfCartesianChart(
+          title: ChartTitle(text: 'Data Insights about Franchises'),
+          legend: Legend(isVisible: true),
+          tooltipBehavior: TooltipBehavior(enable: true), // Define the tooltip behavior
+          series: <ChartSeries>[
+            BarSeries<GDPData, String>(
+              name: 'GDP',
+              dataSource: _chartData,
+              xValueMapper: (GDPData gdp, _) => gdp.continent,
+              yValueMapper: (GDPData gdp, _) => gdp.gdp,
+              dataLabelSettings: DataLabelSettings(isVisible: true),
             ),
           ],
+          primaryXAxis: CategoryAxis(),
+          primaryYAxis: NumericAxis(
+            edgeLabelPlacement: EdgeLabelPlacement.shift,
+            numberFormat: NumberFormat.simpleCurrency(decimalDigits: 0),
+            title: AxisTitle(text: 'Revenue'),
+          ),
         ),
-      ),
-      body: FutureBuilder(
-        future: OrderHistoryApi.getMyOrders(),
-        builder: ((context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            print(snapshot.data);
-            final response = (snapshot.data as List<dynamic>?);
-            if (response == null) {
-              return const Center(child: Text('Nothing found'));
-            }
-            if (response.isEmpty) {
-              return const Center(child: Text('Nothing found'));
-            }
-
-            final reversed = response.reversed.toList();
-
-            return SizedBox(
-              width: MediaQuery.of(context).size.width,
-              child: Container(
-                color: Colors.white,
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: reversed.length,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) => OrderHistoryCard(
-                    id: reversed[index]['item_id']['\$oid'],
-                    name: reversed[index]['food_waste_title'] ?? 'Vegetable peels',
-                    price: reversed[index]['cost'] * response[index]['subscribed_qty'] ?? 200,
-                    subscriptedQty: reversed[index]['subscribed_qty'] ?? 50,
-                    duration: reversed[index]['duration'] ?? 1,
-                    status: reversed[index]['status'],
-                    isOneTime: reversed[index]['one_time'] ?? true,
-                  ),
-                ),
-              ),
-            );
-          }
-          return const Center(child: Text('Loading...'));
-        }),
       ),
     );
   }
+  List<GDPData> getChartData() {
+    final List<GDPData> chartData = [];
+
+    if (franchiseData != null && franchiseData.isNotEmpty) {
+      chartData.add(
+        GDPData(franchiseData[0]['Franchise_Name'], double.parse(franchiseData[0]['Investments'])),
+      );
+
+      if (franchiseData.length > 1) {
+        chartData.add(
+          GDPData(franchiseData[1]['Franchise_Name'], double.parse(franchiseData[1]['Investments'])),
+        );
+      }
+    }
+
+    chartData.addAll([
+      GDPData('Franchise A', 2900),
+      GDPData('Franchise B', 230),
+      GDPData('Franchise C', 2488),
+      GDPData('Franchise D', 3439),
+      GDPData('Franchise E',125),
+      GDPData('Franchise F',1000)
+    ]);
+
+    return chartData;
+  }
+
+
+  void getTrendingDataFromVahanDB(String? url) async {
+    final response = await http.get(Uri.parse(url!));
+
+    setState(() {
+      franchiseData = jsonDecode(response.body)['response'];
+    });
+  }
+}
+
+class GDPData {
+  GDPData(this.continent, this.gdp);
+  final String continent;
+  final double gdp;
 }

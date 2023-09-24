@@ -1,27 +1,23 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:dio/dio.dart';
-import 'package:dio_http_cache/dio_http_cache.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import '../../layout/nav_layout.dart';
 import '../../screens/order_history_screen/api/order_history_api.dart';
 import '../../screens/order_history_screen/widgets/order_history_card.dart';
-
 import 'package:flutter/material.dart';
 
-class FranchisePage extends StatefulWidget {
+class WareHousePage extends StatefulWidget {
   @override
-  _FranchisePageState createState() => _FranchisePageState();
+  _WareHousePage createState() => _WareHousePage();
 }
 
-class _FranchisePageState extends State<FranchisePage> {
+class _WareHousePage extends State<WareHousePage> {
   // Variables to store user input
-  String franchiseName = '';
-  String contactInfo = '';
-  String description = '';
-  String requirement = '';
-  String investment = '';
+  String name = '';
+  String overview = '';
+  String typeOfWasteGood = '';
+  String pricing = '';
+  String qualityQuantity = '';
 
   // Form key
   final _formKey = GlobalKey<FormState>();
@@ -30,7 +26,7 @@ class _FranchisePageState extends State<FranchisePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Franchise Page'),
+        title: Text('WareHouse Page'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -39,63 +35,63 @@ class _FranchisePageState extends State<FranchisePage> {
           child: ListView(
             children: [
               TextFormField(
-                decoration: InputDecoration(labelText: 'Franchise Name'),
+                decoration: InputDecoration(labelText: 'Name'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter franchise name';
+                    return 'Please enter a name';
                   }
                   return null;
                 },
                 onSaved: (value) {
-                  franchiseName = value!;
+                  name = value!;
                 },
               ),
               TextFormField(
-                decoration: InputDecoration(labelText: 'Contact Info'),
+                decoration: InputDecoration(labelText: 'Overview'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter contact info';
+                    return 'Please enter an overview';
                   }
                   return null;
                 },
                 onSaved: (value) {
-                  contactInfo = value!;
+                  overview = value!;
                 },
               ),
               TextFormField(
-                decoration: InputDecoration(labelText: 'Description'),
+                decoration: InputDecoration(labelText: 'Type of Waste/Good'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter description';
+                    return 'Please enter type of waste/good';
                   }
                   return null;
                 },
                 onSaved: (value) {
-                  description = value!;
+                  typeOfWasteGood = value!;
                 },
               ),
               TextFormField(
-                decoration: InputDecoration(labelText: 'Requirement'),
+                decoration: InputDecoration(labelText: 'Pricing'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter requirement';
+                    return 'Please enter pricing';
                   }
                   return null;
                 },
                 onSaved: (value) {
-                  requirement = value!;
+                  pricing = value!;
                 },
               ),
               TextFormField(
-                decoration: InputDecoration(labelText: 'Investment'),
+                decoration: InputDecoration(labelText: 'Quality/Quantity'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter investment';
+                    return 'Please enter quality/quantity';
                   }
                   return null;
                 },
                 onSaved: (value) {
-                  investment = value!;
+                  qualityQuantity = value!;
                 },
               ),
               SizedBox(height: 20),
@@ -103,7 +99,7 @@ class _FranchisePageState extends State<FranchisePage> {
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
-                    // Use the values stored in variables (franchiseName, contactInfo, etc.)
+                    // Use the values stored in variables (name, overview, etc.)
                     // for further processing, e.g., sending to a database.
                     // You can also navigate to another screen or perform any other action here.
                     showDialog(
@@ -115,11 +111,11 @@ class _FranchisePageState extends State<FranchisePage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Text('Franchise Name: $franchiseName'),
-                              Text('Contact Info: $contactInfo'),
-                              Text('Description: $description'),
-                              Text('Requirement: $requirement'),
-                              Text('Investment: $investment'),
+                              Text('Name: $name'),
+                              Text('Overview: $overview'),
+                              Text('Type of Waste/Good: $typeOfWasteGood'),
+                              Text('Pricing: $pricing'),
+                              Text('Quality/Quantity: $qualityQuantity'),
                             ],
                           ),
                           actions: [
@@ -133,7 +129,6 @@ class _FranchisePageState extends State<FranchisePage> {
                         );
                       },
                     );
-                    createFranchise(franchiseName, contactInfo, requirement, int.parse(investment), description);
                   }
                 },
                 child: Text('Submit'),
@@ -142,45 +137,6 @@ class _FranchisePageState extends State<FranchisePage> {
           ),
         ),
       ),
-    );
-  }
-  Future<Franchise> createFranchise(String franchiseName, String contactInfo, String requirements, int investments, String description) async {
-    final http.Response response = await http.post(
-      Uri.parse('https://franchises-api.onrender.com/api/Franchise/store'),
-      headers: <String, String>{
-        'Content-Type': 'application/json; charset=UTF-8',
-      },
-      body: jsonEncode(<String, dynamic>{
-        "Franchise_Name" : franchiseName,
-        "Contact_Info": contactInfo,
-        "Description": description,
-        "Investments": investments,
-        "Requierement":requirements
-      }),
-    );
-    if (response.statusCode == 201) {
-      return Franchise.fromJson(json.decode(response.body));
-    } else {
-      throw Exception('Franchise loading failed!');
-    }
-  }
-}
-class Franchise {
-  final int Investments;
-  final String Franchise_Name;
-  final String Contact_Info;
-  final String Description;
-  final String Requierements;
-
-  Franchise({required this.Investments, required this.Contact_Info, required this.Description, required this.Franchise_Name, required this.Requierements});
-
-  factory   Franchise.fromJson(Map<String, dynamic> json) {
-    return   Franchise(
-        Investments: json["Investments"],
-        Franchise_Name: json['Franchise_Name'],
-        Contact_Info: json["Contact_Info"],
-        Description: json["Description"],
-        Requierements: json["Requierements"]
     );
   }
 }

@@ -18,7 +18,7 @@ class ScrollableCategories extends StatelessWidget {
     Size? size = MediaQuery.of(context).size;
     return SizedBox(
       height: 75,
-      width: size.width,
+      width: size.width*2,
       child: Center(
         child: ListView.builder(
           itemCount: categories.length,
