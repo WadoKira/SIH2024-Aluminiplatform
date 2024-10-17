@@ -60,7 +60,7 @@ dev_dependencies:
 flutter_icons:
   android: 'ic_launcher'
   ios: true
-  image_path: 'assets/logo.png'
+  image_path: 'assets/logo.jpg'
 
 # auth, onboarding(if user not there), listing page(home), profile page, sellers page
 # product details page, user orders page.

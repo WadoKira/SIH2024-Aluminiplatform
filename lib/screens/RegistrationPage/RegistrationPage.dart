@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hexabyte/screens/profile_screen/CreateProfilePage.dart';
+import '../../create_profile_page.dart';
+import '../../home_page.dart';
 import '../home_screen/widgets/home_screen_card.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import '../select_role_screen.dart/select_role_screen.dart';
@@ -10,7 +11,7 @@ class RegistrationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFC5CAE9),
+      backgroundColor: Colors.black, // Changed background to black
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -18,15 +19,14 @@ class RegistrationPage extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(bottom: 16.0),
             child: HomeScreenCard(
-              color: Colors.lightBlueAccent.shade700,
+              color: Colors.amber.shade700, // Changed card color to gold
               imageUrl:
-              "https://compliancecalendar.s3.ap-south-1.amazonaws.com/assets/latestnewsimage/MSME_crop6_thumb.jpg",
+              "https://mdcollege.in/wp-content/uploads/2021/07/alumini.png", // Keep the same alumni image or update as needed
               descriptionText: "",
-              sloganText: "Udyami Bharat Scheme",
-              buttonText: "Click to Register",
+              sloganText: "SVCE Alumni Network", // Updated slogan text
+              buttonText: "Visit SVCE",
               onTap: () async {
-                const url =
-                    "https://udyamregistration.gov.in/Government-India/Ministry-MSME-registration.htm";
+                const url = "https://www.svce.ac.in"; // Link to SVCE
                 if (await canLaunchUrlString(url)) {
                   await launchUrlString(url);
                 } else {
@@ -44,18 +44,45 @@ class RegistrationPage extends StatelessWidget {
               );
             },
             style: ElevatedButton.styleFrom(
-              primary: Colors.indigo.shade700,
-              onPrimary: Colors.white,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12), // Adjust padding as needed
+              primary: Colors.amber.shade700, // Button color changed to gold
+              onPrimary: Colors.black, // Text color changed to black
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10), // Adjust border radius as needed
+                borderRadius: BorderRadius.circular(10),
               ),
-              elevation: 5, // Add elevation for a shadow effect
+              elevation: 5, // Shadow effect
             ),
             child: Text(
               'Create Profile',
               style: TextStyle(
-                fontSize: 18, // Adjust text size as needed
+                fontSize: 18,
+                fontWeight: FontWeight.bold, // Added bold for emphasis
+              ),
+            ),
+          ),
+          SizedBox(height: 16.0), // Add space between the buttons
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => HomePage(), // Redirects to HomePage
+                ),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              primary: Colors.amber.shade700, // Button color changed to gold
+              onPrimary: Colors.black, // Text color changed to black
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              elevation: 5, // Shadow effect
+            ),
+            child: Text(
+              'Go to Home Page',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold, // Added bold for emphasis
               ),
             ),
           )

@@ -11,6 +11,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:form_builder_validators/localization/l10n.dart';
+import 'loginpage.dart';
 import 'theme_provider/app_theme.dart';
 import 'package:provider/provider.dart';
 import 'theme_provider/theme_provider_app.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
       builder: (context, _) {
 
         return MaterialApp(
-          title: 'Intersect',
+          title: 'Alumini',
           // darkTheme: MyThemes.darkTheme,
           theme: appPrimaryTheme(),
           debugShowCheckedModeBanner: false,
@@ -41,9 +42,9 @@ class MyApp extends StatelessWidget {
           localizationsDelegates: const [
             FormBuilderLocalizations.delegate,
           ],
-          //home: WelcomePage(),
+          home: LoginPage(),
           //home:Graph1(),
-          home:IntermediateScreen(),
+          //home:IntermediateScreen(),
           builder: EasyLoading.init(),
         );
       },

@@ -8,33 +8,33 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFC5CAE9), // Background color
+      backgroundColor: Colors.black, // Changed background color to black
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              "Welcome to Intersect",
+              "Welcome to Alumni Connect",
               style: TextStyle(
                 fontSize: 36,
                 fontWeight: FontWeight.bold,
-                color: Colors.blueGrey.shade900,
+                color: Colors.amber.shade700, // Changed text color to gold
               ),
             ),
             SizedBox(height: 16),
             Image.asset(
-              "assets/Welcome.png",
+              "assets/Welcome.png", // Update the asset to match alumni branding
               width: 300,
               height: 300,
             ),
             SizedBox(height: 16),
             Text(
-              "We Intersect U!",
+              "Bridging Futures Together!",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
-                color: Colors.grey.shade700,
+                color: Colors.grey.shade400, // Text color for secondary text
               ),
             ),
             SizedBox(height: 32),
@@ -47,15 +47,15 @@ class WelcomePage extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.indigo.shade700,
-                onPrimary: Colors.white,
+                primary: Colors.amber.shade700, // Button color set to gold
+                onPrimary: Colors.black, // Text color set to black
                 padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),
               ),
               child: Text(
-                "Join Us",
+                "Get Started",
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,

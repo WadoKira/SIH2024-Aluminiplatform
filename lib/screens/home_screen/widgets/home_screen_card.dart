@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 class HomeScreenCard extends StatelessWidget {
   final String? sloganText, descriptionText, buttonText, imageUrl;
   final VoidCallback? onTap;
@@ -21,7 +22,7 @@ class HomeScreenCard extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-          color: color,
+          color: color ?? Colors.black, // Default to black if color is not provided
           borderRadius: BorderRadius.circular(16.0),
           boxShadow: [
             BoxShadow(
@@ -50,18 +51,18 @@ class HomeScreenCard extends StatelessWidget {
                 children: [
                   Text(
                     sloganText!,
-                    style: TextStyle(
+                    style: GoogleFonts.roboto(
                       fontSize: 24.0,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Colors.amber.shade700, // Gold theme
                     ),
                   ),
                   const SizedBox(height: 8.0),
                   Text(
                     descriptionText!,
-                    style: TextStyle(
+                    style: GoogleFonts.roboto(
                       fontSize: 16.0,
-                      color: Colors.white,
+                      color: Colors.white, // White text for readability on a dark background
                     ),
                   ),
                 ],
@@ -73,8 +74,8 @@ class HomeScreenCard extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: onTap,
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.white,
-                  onPrimary: color,
+                  primary: Colors.amber.shade700, // Gold button
+                  onPrimary: Colors.black, // Black text on the button
                   padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
@@ -82,9 +83,10 @@ class HomeScreenCard extends StatelessWidget {
                 ),
                 child: Text(
                   buttonText!,
-                  style: TextStyle(
+                  style: GoogleFonts.roboto(
                     fontSize: 18.0,
                     fontWeight: FontWeight.bold,
+                    color: Colors.black, // Black text
                   ),
                 ),
               ),
@@ -95,4 +97,3 @@ class HomeScreenCard extends StatelessWidget {
     );
   }
 }
-
