@@ -38,6 +38,7 @@ MongoDB: NoSQL database for storing user and platform data.
 JWT: Used for secure authentication and authorization.
 
 
+
 Mobile Application (Frontend):
 
 Flutter: Cross-platform mobile app development framework.
