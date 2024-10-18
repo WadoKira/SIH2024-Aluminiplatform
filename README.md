@@ -25,7 +25,7 @@ The system automatically detects anomalies such as fake profiles, unusual activi
 Secure login and registration system using JWT (JSON Web Tokens) for web and OAuth for mobile app.
 Different roles and permissions based on user type (Alumni, Student, Admin).
 
-Tech Stack:
+# Tech Stack:
 
 Web Application (Backend):
 
@@ -36,6 +36,7 @@ Express.js: Web framework for building APIs.
 MongoDB: NoSQL database for storing user and platform data.
 
 JWT: Used for secure authentication and authorization.
+
 
 Mobile Application (Frontend):
 
