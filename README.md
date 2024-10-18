@@ -7,20 +7,20 @@ Web Application: Built using Node.js for backend services.
 Mobile Application: Built using Flutter for cross-platform mobile development.
 
 Features:
-1. Alumni Search
+1. Alumni Search:
 Search and filter alumni by skills, location, job title, or batch year.
-2. Skill-Based Recommendations
+2. Skill-Based Recommendations:
 Get personalized recommendations based on skills for networking, job opportunities, and alumni matches.
-3. Job Portal
+3. Job Portal:
 Post job opportunities and allow students and alumni to apply for positions.
 Filter jobs by industry, location, and skills.
-4. Donation Portal
+4. Donation Portal:
 Allows alumni to donate to various causes such as scholarships, infrastructure, and more.
-5. Feedback and Survey
+5. Feedback and Survey:
 Submit feedback or participate in surveys to enhance the platform and alumni community activities.
-6. Anomaly Detection
+6. Anomaly Detection:
 The system automatically detects anomalies such as fake profiles, unusual activities, or suspicious job postings.
-7. Authentication
+7. Authentication:
 Secure login and registration system using JWT (JSON Web Tokens) for web and OAuth for mobile app.
 Different roles and permissions based on user type (Alumni, Student, Admin).
 
